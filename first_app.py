@@ -44,7 +44,7 @@ print(c)
 # цілочислове ділення
 c = a // b
 print(c)
-# остача від ділення ділення
+# остача від ділення
 c = a % b
 print(c)
 c = a + b
@@ -87,7 +87,38 @@ print(c)
 if a > b:
     print(f'{a}>{b}')
     print('In if')
-if a == b:
+if a < b:
     print(f'{a}<{b}')
+if a == b:
+    print(f'{a}={b}')
     print('In if')
 print('Not in if')
+
+if a > b:
+    print(f'{a}>{b}')
+elif a < b:
+    print(f'{a}>{b}')
+else:
+    print(f'{a}={b}')
+
+#and - логічне І
+#or - логічне АБО
+#not - логічне заперечення
+
+x = 5
+y = 10
+q = 15
+if x>y and x>q:
+    print ('x is the largest number')
+elif y>x and y>q:
+    print('y is the largest number')
+elif q>x and q>y:
+    print('y is the largest number')
+
+#якщо всі числа різні if x!=y and y!=q and x!=q:
+if x>y and x>q:
+    print ('x is the largest number')
+elif y>q:
+    print('y is the largest number')
+else:
+    print('q is the largest number')
