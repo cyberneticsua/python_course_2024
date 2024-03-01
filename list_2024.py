@@ -50,11 +50,11 @@ while i < len(people):
     i += 1
 print(people)
 
-#Перевірка списків на рівність
+# Перевірка списків на рівність
 numbers1 = [1, 2, 3, 4, 5]
 numbers2 = list([1, 2, 3, 4, 5])
 
-if numbers1==numbers2:
+if numbers1 == numbers2:
     print('two lists are equal')
 else:
     print('not equal')
@@ -110,15 +110,15 @@ print(removed_element)
 people.pop()
 print(people)
 
-#remove() - видаляє елемент за вказаним значенням
+# remove() - видаляє елемент за вказаним значенням
 people.remove('Olena')
 print(people)
 
-#clear() - повністю очищує список
+# clear() - повністю очищує список
 people.clear()
 print(people)
 
-#Перевірка на наявність елемента в списку
+# Перевірка на наявність елемента в списку
 people = ['Tetiana', 'Kateryna', 'Iryna', 'Olena']
 if 'Kateryna' in people:
     people.remove('Kateryna')
@@ -141,7 +141,7 @@ people = ['Tetiana', 'kateryna', 'alice', 'Iryna', 'Olena', 'Tetiana']
 people.sort()
 print(people)
 
-#сортування без врахування регістру
+# сортування без врахування регістру
 people.sort(key=str.lower)
 print(people)
 
@@ -150,7 +150,7 @@ numbers = [9, 21, 12, 1, 3, 15, 18]
 print(min(numbers))
 print(max(numbers))
 
-#Об'єднання двох списків
+# Об'єднання двох списків
 people1 = ["Tom", "Bob", "Alice"]
 people2 = ["Tom", "Sam", "Tim", "Bill"]
 people_3 = people1 + people2
@@ -166,3 +166,44 @@ for person in people_with_age:
     for item in person:
         print(item, end=" |")
     print()
+
+# List Comprehension
+# syntax: new_list = [вираз for елемент in iterable]
+# syntax: new_list = [вираз for елемент in iterable [if умова]]
+x = [1, 2, 3, 4, 5, 6]
+x2 = []
+for y in x:
+    x2.append(y * y)
+print(x2)
+
+x2 = [y * y for y in x]
+print(x2)
+
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+fruits_with_a = [fruit for fruit in fruits if 'a' in fruit]
+print(fruits_with_a)
+
+# Фільтрування списку
+# filter(fun, iter) - fun - функція-умова, в яку передається кожен елемент з колекції і яка повертає значення True, якщо елемент відповідає певній умові, в іншому випадку - False. iter - колекція
+numbers = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+numbers_greater_than_1 = [number for number in numbers if number > 1]
+print(numbers_greater_than_1)
+
+
+def condition_1(number):
+    # if number > 1:
+    #     return True
+    # else:
+    #     return False
+    return number > 1
+
+numbers_greater_than_1_v2 = list(filter(condition_1, numbers))
+print(numbers_greater_than_1_v2)
+
+#Проєкція списку
+#map(fun, iter) - fun - функція перетворення, в яку передається кожен елемент з колекції, iter - колекція
+def square(number):
+    return number * number
+
+result = list(map(square, numbers))
+print(result)
