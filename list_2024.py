@@ -207,3 +207,8 @@ def square(number):
 
 result = list(map(square, numbers))
 print(result)
+x1 = [1, 2, 3]
+x1.append([4, 5])
+print(x1)
+x1.extend([4, 5])
+print(x1)
